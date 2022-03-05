@@ -1,0 +1,102 @@
+Ep #63 - Angular Forms - Reactive Forms - Read From Values 
+
+Read Reactive Form Values
+
+1. Get Value of entire Form (full form value)
+    - this.addLoanForm.value 
+
+2. Get values of specific form control (specific field data)
+    - this.addLoanForm.get('loanName').value
+
+3. get values on changes (when data changes, capture new value)
+    - this.addLoanForm.valueChanges
+    - for this have to sucbsribe:
+    so, 
+
+    this.addLoanForm.valueChanges.sucbsribe(data => {
+        console.log(data);
+    });
+
+
+Hands on Examples:  
+
+
+HTML File Contains:
+=====================================
+
+UI contains:
+---------------------------------
+
+<form [formGroup]="addLoanForm">
+    <div class="form-group">
+        <label>
+            Loan Name
+        </label>
+        <input type="text" formControlName="loanName">
+    </div>
+        <button (click)="addLoanType()">Add Loan Type</button>
+
+</form>
+
+
+
+
+
+
+.TS File Contains:
+===============================
+
+
+Class Contains:
+---------------------------
+
+Class:  addLoanForm: any = FormGroup;
+
+
+constructor Contains:
+-------------------------------------------------
+
+constructor(private fb: FormBuilder)
+
+
+ngOnInit contains:
+-------------------------------------------
+
+1. One way: 
+
+ this.addLoanForm = this.fb.group({
+      loanName: new FormControl('Rakib'),
+      loanType: new FormControl('Personal Loan'),
+      loanDescription: new FormControl('This is for pc'),
+     
+    });
+
+
+2. Other way: setValue method =>
+
+
+this.addLoanForm = this.fb.group({
+      'loanName': new FormControl(),
+      'loanType': new FormControl(),
+      'loanDescription': new FormControl(),
+     
+    });
+
+    const loanObj = {
+      'loanName': 'Rakib',
+      'loanType': '1',
+      'loanDescription': 'laptop'
+     
+  }
+
+this.addLoanForm.setValue(loanObj);
+
+  }
+
+sucbsribe:
+
+  this.addLoanForm.valueChanges.sucbsribe(data => {
+        console.log(data);
+
+
+

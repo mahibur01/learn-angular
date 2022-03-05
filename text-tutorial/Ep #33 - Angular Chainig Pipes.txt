@@ -1,0 +1,10 @@
+Episode #33 - Angular Chainig Pipes
+
+1. Multiple pipes on a data input is called a Chainig Pipes
+
+Eg.
+   
+   <div> {{ dateExample | date | uppercase }} </div>
+   -Outout will be Date string uppercase
+
+   

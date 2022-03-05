@@ -1,0 +1,21 @@
+Ep #67 - Angular Forms - Reactive Forms - Track Value Changes
+
+1. Reset Form - valueChanges()
+
+2. valueChanges is yet another important property of forms of FormControl
+
+3. valueChanges returns an Observable 
+
+4. We need to subscribe to the Observable to read the value 
+
+5. valueChanges is a property in AbstractControl
+
+6. valueChanges will emit an event every time there is any change in the values of the control changes 
+
+Syntex: 
+---------------
+
+this.registerForm.valueChanges()
+this.formName.get('email').valueChanges.subscribe(data=>{
+    console.log(data);
+})

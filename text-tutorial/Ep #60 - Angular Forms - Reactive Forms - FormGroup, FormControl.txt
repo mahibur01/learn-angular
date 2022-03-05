@@ -1,0 +1,91 @@
+Ep #60 - Angular Forms - Reactive Forms - FormGroup, FormControl
+
+1. 3 important things in Reactive Forms 
+
+    1.1 FormControl
+
+    1.2 FormGroup 
+
+    1.3 FormBuilder 
+
+2. Follow 5 steps: 
+
+Step #1 - Import and ReactiveFormsModule in the app.module.ts 
+
+    - on recent module have to add this 
+
+    - add module array list also 
+
+Step #2 - Create the form in app.component.html 
+
+    - FormGroup 
+
+    - FormControlName
+
+    Reactive Forms 
+
+        Form 
+
+            Elements 
+
+                input -> formControl 
+
+                textarea -> formControl
+
+                buttons 
+
+                checkbox 
+
+        FormGroup 
+
+            - Each elements is a FormControl 
+            
+            - When one or more formcontrol are grouped together - we can call it formGroup 
+
+    Process: 
+
+        <form [formGroup]="registerForm"(ngSubmit)="postData()">
+            <input type="text" formControlName="fname">
+            <input type="submit" value="Post Data" [disabled]="!registerForm.valid">
+        </form> 
+
+
+Step #3 - in the component class-import recuired modules 
+
+    - import {Component, OnInit} from '@angular/core';
+    - import {FormBuilder, FormGroup, FormControl, NgForm, Validators} from '@angular/forms';
+    
+
+Step #4 - ui 
+
+    
+<form [formGroup]="addLoanForm">
+
+    <input type="text" formControlName="loanName">
+    <textarea formControlName="loanDescription"></textarea>
+    <button (click)="addLoanType()">Add Loan Type</button>
+
+</form>
+
+
+    - Declare this class: 
+
+      addLoanForm : any = FormGroup;
+
+
+Step #5 - Method (inside ngOninit)
+
+ this.addLoanForm = new FormGroup({
+      'loanName' : new FormControl(),
+      'loanDescription' : new FormControl()
+
+    })
+
+
+For console print: 
+
+addLoanType(){
+    console.log(this.addLoanForm.value);
+  }
+
+

@@ -1,0 +1,22 @@
+Ep #68 - Angular Forms - Reactive Forms - Status Changes
+
+1. We can subscribe to Status changes happening in the form at any time 
+
+2. statusChanges is yet another important property of FormControl, FormGroup and FormArray 
+
+3. statusChanges returns an observable. We need to subscribe to the observable to read the value 
+
+4. statusChanges is a property in Abstract Control 
+
+5. statusChanges will emit an event every time there is any change in the validation status of the control changes 
+
+Syntax:
+-------------------------
+
+this.registerForm.statusChanges(data => {
+
+});
+
+this.fomrName.get('fname').statusChanges.subscribe(data =>{
+    console.log(data);
+})

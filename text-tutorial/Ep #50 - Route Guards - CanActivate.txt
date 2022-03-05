@@ -1,0 +1,6 @@
+Ep #50 - Route Guards - CanActivate 
+
+1. The CanActivateChild guard works similarly to the CanActivate guard, 
+but the difference is it's run before each child route is CanActivate
+
+2. 

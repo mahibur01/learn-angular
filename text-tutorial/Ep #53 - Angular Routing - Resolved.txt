@@ -1,0 +1,10 @@
+Ep #53 - oute Guards - Resolved
+
+1. Resolve route guard allows us to provide data needed for a route
+
+2. If some data is "Mandatory" for a component-try using the logic from
+ngOnit to Resolve.
+
+3. Using the activeRoute.snapshot.data we can access data and process it.
+
+4. 

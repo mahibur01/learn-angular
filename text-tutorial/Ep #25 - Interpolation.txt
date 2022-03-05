@@ -1,0 +1,46 @@
+Episode #25 - Interpolation
+
+1. Common mistakes
+    - qoutes/single/doubles around the variables 
+    ctrl+c 
+
+    ngIf - interpolation 
+    ngFor -> 
+    ngSwitch -> Homework 
+
+2 same name should be given - whatever is given in component 
+
+example: 
+
+contacts = [ //this array in .ts file
+    {
+     'firstName': 'Rakib',
+     'lastName': 'Khan',
+     'contactId': '171442549'
+    },
+
+    {
+      'firstName': 'Khalek',
+      'lastName': 'Mia',
+      'contactId': '171442571'
+     },
+
+     {
+      'firstName': 'Mehedi',
+      'lastName': 'Hasan',
+      'contactId': '171442589'
+     }
+
+<table>
+  <tr>
+    <th>  User Id  </th>
+    <th>  First Name  </th>
+    <th>  Last Name  </th>
+  </tr>
+   
+  <tr *ngFor="let contact of contacts">
+    <td>{{contact.contactId}}</td>
+    <td>{{contact.firstName}}</td>
+    <td>{{contact.lastName}}</td>
+  </tr>
+</table>

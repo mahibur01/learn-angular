@@ -1,0 +1,21 @@
+Ep #57 - Angular Forms - Reset Template Driven Form 
+
+1. Reset the form using 
+    
+    - Reset Method 
+
+    - Form.reset();
+
+2. add a button in ui and use this method 
+
+    2.1 <button class="btn btn-link" (click)="resetForm(addCustomerForm)">Reset</button>
+
+3. Add this resetForm() method in .ts file 
+
+4. add this logic inisde resetForm() method
+
+    - resetForm(formValue : NgForm){
+        formValue.reset();
+        or formValue.resetForm();
+    }
+   

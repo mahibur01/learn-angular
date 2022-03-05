@@ -1,0 +1,65 @@
+Ep #55 - Angular Forms - Template Driven Forms
+
+Introduction: 
+
+ - Easy to use
+ - Simple and straight forward
+ - All the validations, form elements are all defined in the template file
+ - Froms are tracked automatically
+ - Tracked form data traverses via various states (pristine etc)
+ - Uses two-way data binding techniques to bind data 
+ - Most of the code resides in template file 
+ - Validations are mostly the defauld HTML5 validations 
+ - Minimal component code as most of the code is in template file 
+ - Unit testing will be challenge 
+
+
+Step by step process:
+
+ - Step #1 - import and add on the FormsModule in the app.module.ts 
+           - for template driven forms - FromsModule needs to be imported 
+           - If we do not import this - we will get error when doing two way data binding 
+           - Add the module into the array list of imports
+
+   Step #2 - Create the form in app.component.html 
+           - ngForm
+             - Form name as template variable using "#" for e.g #loginForm
+
+           - ngModel 
+             - Every form field should have a "name" attribute attached to it 
+
+Add different From input types: 
+
+  - input type="text" 
+  - input type="radio"
+  - input type="checkbox"
+  - input type="email" 
+  - textarea 
+  - select drop down 
+
+Form Making process
+------------------------------------------------------
+
+1. <form #addCustomerForm="ngForm" (submit)="addCustomer(addCustomerForm)">
+
+  1.1 declare name="" properties inside class of .ts file 
+     
+     Example: firstName: string = '';
+              terms: boolean = false;
+
+2. <input type= "text" [(ngModel)]="" name=""> //Every input need this things
+
+  2.1 addCustomer() method inside ngOnInit() 
+ 
+     Example: addCustomer(formValue: ngForm){
+         console.log(formValue.value);
+     }
+
+3. <button type="submit">Submit</button>
+
+
+Errors: 
+
+1. Cannot bind 'ngModel' - so that have to import FormsModule on module.ts file
+
+2. make sure methods out side of ngOnInit bracket 

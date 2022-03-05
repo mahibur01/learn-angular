@@ -1,0 +1,32 @@
+Ep #66 - Angular Forms - Reactive Forms - Reset Forms
+
+Reactive Form - Reset()
+
+1. Reset Form - reset()
+    - we can reset entire form using reset() method
+
+Syntax:
+
+this.registerForm.reset()
+
+
+Hands on Example:
+-------------------------------------
+
+ui:
+---------------
+
+add button :
+
+<button (click)="resetForm()">Reset Form</button>
+
+
+
+method:
+-------------
+resetForm(){
+
+    this.addLoanForm.reset();
+
+
+}

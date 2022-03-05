@@ -1,0 +1,6 @@
+Ep #51 - Route Guards - CanLoad 
+
+1. This protects the Route completely. Such as lazay loading the 
+module and also proetcs all the routes associated with that module.
+
+2. 

@@ -1,0 +1,45 @@
+Episode #32 - Parameterizing Pipes 
+
+1. Pipes can accept 1 or more parameters 
+    -> conditions/filters/specific data based on which data will be transformed 
+
+2. Some of the built in pipes which accept parameters are:
+
+    - currency 
+
+currencyCode	string	Optional. Default is undefined.
+
+display	string | boolean	Optional. Default is 'symbol'.
+
+digitsInfo	string	Optional. Default is undefined.
+
+locale	string	Optional. Default is undefined.
+
+    - date 
+
+'short'	'M/d/yy, h:mm a'	6/15/15, 9:03 AM
+'medium'	'MMM d, y, h:mm:ss a'	Jun 15, 2015, 9:03:01 AM
+'long'	'MMMM d, y, h:mm:ss a z'	June 15, 2015 at 9:03:01 AM GMT+1
+'full'	'EEEE, MMMM d, y, h:mm:ss a zzzz'	Monday, June 15, 2015 at 9:03:01 AM GMT+01:00
+'shortDate'	'M/d/yy'	6/15/15
+'mediumDate'	'MMM d, y'	Jun 15, 2015
+'longDate'	'MMMM d, y'	June 15, 2015
+'fullDate'	'EEEE, MMMM d, y'	Monday, June 15, 2015
+'shortTime'	'h:mm a'	9:03 AM
+'mediumTime'	'h:mm:ss a'	9:03:01 AM
+'longTime'	'h:mm:ss a z'	9:03:01 AM GMT+1
+'fullTime'	'h:mm:ss a zzzz'	9:03:01 AM GMT+01:00
+'MMM-dd-yyyy'
+'short'
+'long'
+
+    - percent 
+
+| percent : <minimumBeforeDecial>.<miniumDecialNumbers>-<maxDecimalNumbers>
+
+digitsInfo	string	Optional. Default is undefined.
+
+locale	string	Optional. Default is undefined.
+
+3. Syntax for writing parameter pipes 
+    {{ <data_input> | <pipe_name> : <parameter> }}

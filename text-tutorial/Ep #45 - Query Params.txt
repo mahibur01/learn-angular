@@ -1,0 +1,38 @@
+Episode #45 - Query Params 
+
+1. We can send data from Form -> 
+
+2. We can have data from click -> 
+
+Basically -> URL -> http://localhost.com/search?key=10&state=ka&city=bangalore 
+
+3. Query Params -> visible in the URL 
+---------------------------------------------
+params:
+
+  color = '';
+  size = 'M';
+  priceTo = 0;
+  priceFrom = 0;
+
+
+ this.ActivatedRoute.queryParams.subscribe(params =>{
+      this.color = params.color;
+      this.size = params.size;
+      this.priceTo = params.priceTo;
+      this.priceFrom = params.priceFrom;
+      // console.log(params);
+    })
+
+html: 
+
+
+<p>Color : {{color}}</p>
+<p>Size : {{size}}</p>
+<p>PriceTo : {{priceTo}}</p>
+<p>priceFrom : {{priceFrom}}</p>
+
+
+4. Most used for querying, searching or filtering data etc 
+
+facebook.com/search?page=10&pagesize=20

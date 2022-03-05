@@ -1,0 +1,62 @@
+Ep #71 - Angular Component Communication 
+
+1. Component Make: 
+
+ng g c header
+
+2. How do use angular component?
+    - can selector name change? - Yes   
+    - copy selector and app.component.html 
+
+3. How do you angular component form different module ?
+
+    - ng generate model ( ng g m users )
+    - user module 
+        -> component -> list-users 
+    - Import the custome/new module into app module 
+    - Exports the respective components that we want to use outside of the module 
+
+
+4. How does angular components Communication?
+    - @input and @output directives
+    - using services 
+
+    4.1 Input and output
+        -> parent/child -> parent -> sending data to child 
+            -> list-users -> filter-users 
+            -> list-users <- output <- filter-users 
+        -> We need to pass data from parent using [inputName]
+        -> Same needs to be defined in the child component as @Input()
+
+5. Angular components Communication via services
+
+    - Create a services
+        - ng g service <service-name>
+
+    - Implement methods which can be shared between components for sharing data 
+
+6. Angular component lifecycle 
+    - Component series of states 
+    - lifecycle hooks
+        - ngOnChanges -> Listen to changes in data/form/state/value changes
+                      -> http call and write subscribe in ngOnInit
+        - ngOnInit 
+        - ngDoCheck 
+            - ngAfterContentInit -> if you want to wait till intialized 
+            - ngAfterContentChecked 
+            - ngAfterViewInit
+            - ngAfterViewChecked 
+        - ngOnDestroy -> when you want to exit the component
+            -> unscribe the subscription 
+
+7. How many ways you can use component templates?
+        - templateUrl
+        - template in the component itself 
+
+8. Can you include more 1 css files in component?
+        - Yes, every component comes with 1 default css/scss 
+
+    
+
+
+

@@ -1,0 +1,28 @@
+Episode #20 - *ngFor
+
+1. It's a loop like for loop 
+Example: 
+
+It's a array in class
+-----------------------------
+  clientList = [
+    {clientId: 101, firstName: 'Mahibur', lastName: 'Rahman'},
+    {clientId: 102, firstName: 'Abdul', lastName: 'Khalek'},
+    {clientId: 103, firstName: 'Mehedi', lastName: 'Hasan'},
+    {clientId: 104, firstName: 'Anik', lastName: 'Rahman'},
+  ]
+
+It's a ngFor table in ui 
+-----------------------------
+
+<h1>This data comes from table</h1>
+<table>
+    <th> Client ID </th>
+    <th> First Name </th>
+    <th> Last Name </th>
+    <tr *ngFor="let client of clientList" >
+        <td>{{client.clientId}}</td>
+        <td>{{client.firstName}}</td>
+        <td>{{client.lastName}}</td>
+    </tr>
+</table>

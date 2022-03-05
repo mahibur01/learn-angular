@@ -1,0 +1,18 @@
+Ep #52 - Route Guards - canDeactive
+ 
+ 1. It's used for show confirm massage when any user change or click
+ next page without saving any file. 
+
+ Example: Google form submition alerts. 
+
+ 2. To do this have to install canDeactive guard and settings following code
+
+ canDeactive(component: SearchComponent){
+     console.log(component.isDirty);
+
+     if(!component.isDirty){
+         return window.comfirm("are you sure?")
+     }
+     return true;
+     }
+ }

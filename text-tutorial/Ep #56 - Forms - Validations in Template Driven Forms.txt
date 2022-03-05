@@ -1,0 +1,29 @@
+Ep #56 - Angular Forms - Validations in Template Driven Forms
+
+1. Adding Validations in Template Driven Forms 
+
+    1.1 Disable the Form
+        - Disable the form if the form is not valid 
+    
+    1.2 HTML5 Validations
+        - Required 
+        - minLength
+        - maxLength
+        - checked 
+
+Validations
+---------------------------------------------------------------
+
+1. Button Disabled:
+    - Button will not be active without fill all the filed 
+    
+    1.1 for this have to use "Required" in terms and condition accept filed 
+
+    1.2 then have to use function in submit button 
+        This function: [disabled]="!formName.valid"
+
+2. Minimum Length in mobile number:
+
+    2.1 Have to add minlength="10" in this field
+
+    

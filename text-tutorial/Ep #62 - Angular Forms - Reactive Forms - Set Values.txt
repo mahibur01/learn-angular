@@ -1,0 +1,109 @@
+Ep #62 - Angular Forms - Reactive Forms - Set Values 
+
+
+Setting values in Reactive Forms 2 ways:
+
+1. Set the value of entire form in one go 
+    - this.addLoanForm= new FormGroup({
+        'loanName': new FormControl('Value Here'),
+        'loanDescription': new FormControl('Value Here'),
+        'loanType': new FormControl('Value Here')
+    })
+
+
+2. Setting  the form values using setValue 
+
+    - const loanObj = {
+        loanName: 'value1',
+        loanDescription: 'value2',
+        loanType: '1'
+    }
+
+    this.addLoanForm.setValue(loanObj);
+
+
+
+
+Hands on Examples:  
+
+
+HTML File Contains:
+=====================================
+
+UI contains:
+---------------------------------
+
+<form [formGroup]="addLoanForm">
+    <div class="form-group">
+        <label>
+            Loan Name
+        </label>
+        <input type="text" formControlName="loanName">
+    </div>
+        <button (click)="addLoanType()">Add Loan Type</button>
+
+</form>
+
+
+
+
+
+
+.TS File Contains:
+===============================
+
+
+Class Contains:
+---------------------------
+
+Class:  addLoanForm: any = FormGroup;
+
+
+constructor Contains:
+-------------------------------------------------
+
+constructor(private fb: FormBuilder)
+
+
+ngOnInit contains:
+-------------------------------------------
+
+1. One way: 
+
+ this.addLoanForm = this.fb.group({
+      loanName: new FormControl('Rakib'),
+      loanType: new FormControl('Personal Loan'),
+      loanDescription: new FormControl('This is for pc'),
+     
+    });
+
+
+2. Other way: setValue method =>
+
+
+this.addLoanForm = this.fb.group({
+      'loanName': new FormControl(),
+      'loanType': new FormControl(),
+      'loanDescription': new FormControl(),
+     
+    });
+
+    const loanObj = {
+      'loanName': 'Rakib',
+      'loanType': '1',
+      'loanDescription': 'laptop'
+     
+  }
+
+this.addLoanForm.setValue(loanObj);
+
+  }
+
+
+3. Patch Value (No error when you dont pass value)
+
+this.addLoanForm.patchValue(loanObj);
+
+
+
+

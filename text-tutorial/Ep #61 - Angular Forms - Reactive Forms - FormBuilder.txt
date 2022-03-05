@@ -1,0 +1,77 @@
+Ep #61 - Angular Forms - Reactive Forms - FormBuilder
+
+Step #1 - Inject the FormBuilder in the constructor 
+    - constructor(private formBuilder:FormBuilder)
+
+Step #2 - Create the form instance 
+    - this.registerFrom=formBuilder.group({
+        fname: new FormControl(),
+        lname: new FormControl()
+    });
+
+1. FormBuilder
+    - It's an abstraction layer which make it easy to design and builf forms 
+    - FormBuilder to work when complex form structure 
+        - add/remove
+        - Array of controls 
+
+2. FormBuilder has 3 important 
+        - FormGroup 
+        - FormArray
+        - FormControl
+
+
+
+Examples:  
+
+
+HTML File Contains:
+=====================================
+
+UI contains:
+---------------------------------
+
+<form [formGroup]="addLoanForm">
+    <div class="form-group">
+        <label>
+            Loan Name
+        </label>
+        <input type="text" formControlName="loanName">
+    </div>
+     <button (click)="addLoanType()">Add Loan Type</button>
+
+</form>
+
+
+
+
+.TS File Contains:
+===============================
+
+
+Class Contains:
+---------------------------
+
+Class:  addLoanForm: any = FormGroup;
+
+
+constructor Contains:
+-------------------------------------------------
+
+constructor(private fb: FormBuilder)
+
+
+ngOnInit contains:
+-------------------------------------------
+
+ this.addLoanForm = this.fb.group({
+      loanName: new FormControl(),
+      loanType: new FormControl(),
+      loanDescription: new FormControl(),
+     
+    });
+  }
+
+  addLoanType() {
+    console.log(this.addLoanForm.value);
+  }

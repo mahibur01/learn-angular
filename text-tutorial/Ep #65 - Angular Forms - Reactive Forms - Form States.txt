@@ -1,0 +1,42 @@
+Ep #65 - Angular Forms - Reactive Forms - Form States
+
+Reactive Form - Form States
+    1. .ng-valid
+    2. .ng-invalid 
+ 
+1 & 2 Those check - Form is valid or not (Check if the form is valid or not )
+
+    3. .ng-pending 
+
+    4. .ng-pristine 
+
+4 says form fields are pristine (Form was not been modified by the user)
+
+    5. .ng-dirty 
+
+5 says form controls were edited - dirty (For was modified by the user)
+
+    6. .ng-untouched 
+    7. .ng-touched 
+
+6 & 7 says Form fields were touched (Form fields were touched or untouched)
+
+
+
+
+Handson Example:
+------------------------
+
+<form [formGroup]="form"(ngSubmit)="onSignIn(form)">
+<div class="form-group">
+<input type="text" class="form-control" id="email" placeholder="Enter Email" formControlName="email">
+<span class="text-muted" *ngIf="form.get('email').hasError('required')&&form.get('email').touched">Email is required</span>
+</div>
+
+<div class="form-group">
+<input type="password" class="form-control" id="password" placeholder="Enter password" formControlName="password">
+<span class="text-muted" *ngIf="form.get('password').hasError('required')&&form.get('password').touched">password is required</span>
+</div>
+
+<button class="btn btn-primary btn-block" type="submit" [disbled]="!form.valid">Sign in</button>
+</form> 

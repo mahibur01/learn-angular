@@ -1,0 +1,21 @@
+<p>Data from path</p>
+<h1>Product id: {{productId}} </h1> 
+<h1>Photo id: {{photoId}} </h1>  
+
+
+<form #addProductsForm="ngForm" (submit)="addProduct(addProductsForm)">
+
+    <input type="text" [(ngModel)]="username" name="username" required>
+   
+
+    <input type="text" [(ngModel)]="product" name="product" required maxlength="5">
+    <button type="submit" [disabled]="!addProductsForm.valid" (click)="resetForm(addProductsForm)" >Submit</button>
+
+    <button class="btn btn-primary" (click)="resetForm(addProductsForm)" >RESET</button>
+
+    <button class="btn btn-link" (click)="loadValues(addProductsForm)" >Default</button>
+
+
+</form>
+
+<!-- <div>{{product}}</div> -->

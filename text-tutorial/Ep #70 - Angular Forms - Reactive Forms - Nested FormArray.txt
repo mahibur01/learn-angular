@@ -1,0 +1,20 @@
+Ep #70 - Angular Forms - Reactive Forms - Nested FormArray
+
+1. Add Row Dynamically into form 
+
+    - There will be use cases when we will not know how many rows or fields to expect 
+    - That's when we will need to dynamically "Add Rows" to the form on the fly 
+    - Adding new Rows to form simple refers to appending/pushing the form Groups or form controls to the Form Array at run time 
+
+    Form Array
+        - Form Group 
+        - Form Control 
+
+2. Remove Rows Dynamically into Form 
+
+    - There will be use cases when we will have to remove the dynamically added rows from the forms 
+    - That's when we will need to dynamically "Remove Rows" from the form on the fly 
+    - We will need to capture the index of the row which we want to remove from the array 
+    - Using the indexAt method - we can easily point to the item we want to remove 
+
+    

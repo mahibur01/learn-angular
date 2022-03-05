@@ -1,0 +1,68 @@
+Episode #41 - Configuring Component Routes Options 
+
+1. There are various options that we can configure in Component Routes 
+
+2. Some of the ones that we have seem in previous/earlier tutorials ar earlier are 
+
+    2.1 path
+
+    2.2 component 
+
+    2.3 Router Outlet Tutorial - Please check the playlist 
+        -> outlet 
+
+
+    2.4 children 
+
+    Example: 
+
+    { path: 'loans',
+      children: [
+
+        {
+            path: 'add-loan', component: AddLoansComponent
+        
+        },
+
+         {
+            path: 'edit-loan', component: AddLoansComponent
+        
+        },
+
+         {
+            path: 'delete-loan', component: AddLoansComponent
+        
+        },
+
+
+      ]
+
+
+    2.5 redirectTo -> 
+
+    Example: 
+    Routes = 
+[
+
+    {
+        path: 'add-new-loan',
+        redirectTo: 'add-loan'
+    },
+
+    {
+        path: 'add-loan',
+        component: AddLoansComponent,
+    }
+];
+
+
+    2.6 pathMatch -> Will cover in coming episodes
+
+    [
+        {path: '', redirectTo: 'home', pathMatch: 'full'},
+        {path: 'home',component:ComponentName},
+        {path: 'dashboard', component:ComponentName2},
+        {path: 'terms',component:ComponentName3},
+        {path: '',redirectTo:'enroll',pathMatch:'full'}
+        
+    ] 

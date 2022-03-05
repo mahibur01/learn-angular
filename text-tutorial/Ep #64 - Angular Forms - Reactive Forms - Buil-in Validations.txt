@@ -1,0 +1,91 @@
+Ep #64 - Angular Forms - Reactive Forms - Buil-in Validations 
+
+
+Built in Reactive Form Validations
+
+1. Validations in FormControl 
+
+    - this.addLoanForm = new FormGroup({
+        'loanName': new FormControl('some',[
+            Validators.minLength(10),
+            Validators.required,
+            Validators.maxLength(10)
+
+        ])
+    })
+
+2. Multiple Validations using Validators.compose
+
+    - 'loanName': new FormControl('some',[
+        Validators.minLength(10),
+        Validators.required,
+        Validators.pattern('^[a-zA-Z ]*$')
+    ])
+
+3. Get the state of the form -> valid or not 
+
+    - <button (click)="addLoanType()"[disabled]="!addLoanForm.valid">Add Loan Type</button>
+
+4. Disabled the form button 
+
+    - this.addLoanForm.valid
+
+
+Hands on Example:
+---------------------------------
+
+constructor
+---------------------------------
+
+ constructor(private fb: FormBuilder) {}
+
+ui 
+-----------------------------------------
+
+<form [formGroup]="addLoanForm">
+    <div class="form-group">
+        <label>
+            Loan Name
+        </label>
+        <input type="text" formControlName="loanName">
+    </div>
+
+    <div class="form-group">
+        <label>
+            Loan Type
+        </label>
+        <input type="text" formControlName="loanType">
+    </div>
+
+    <div class="form-group">
+        <label>
+            Loan Description
+        </label>
+        <textarea formControlName="loanDescription"></textarea>
+    </div>
+    <button (click)="addLoanType()" [disabled]="!addLoanForm.valid">Add Loan Type</button>
+
+</form>
+
+
+
+ngOninit
+---------------------------------
+
+ this.addLoanForm = this.fb.group({
+      'loanName': new FormControl('',[
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(5)
+       ]
+      ),
+
+      'loanType': new FormControl('',Validators.required),
+
+      'loanDescription': new FormControl('',[
+        Validators.required,
+        Validators.maxLength(10)   
+      ]
+      ),
+     
+    });

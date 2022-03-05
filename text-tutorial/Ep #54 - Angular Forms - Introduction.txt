@@ -1,0 +1,38 @@
+Ep #54 - Angular Forms - Introduction
+
+1. Forms are a very integral and essential building blocks of "almost" apps
+
+2. Common form examples are
+   
+   - Login
+   - Forgot
+   - Register
+   - Checkout form 
+   - Contact Us 
+
+3. Forms allows us to gather information and data from user 
+
+4. Good way to interact with the users and almost all websites will need forms in some or other way
+
+5. We can use any CSS framework of our choice - Bootstrap or MD 
+
+-------------------------------------------------
+
+6. Angular Support for Froms 
+ 
+ - Two way data binding - ngModel
+ - Change Tracking - 
+ - Validations - 
+ - Error Handling -
+ - Unit Testing - 
+
+7. Types of Forms in Angular
+ 
+ 7.1 Static / Template Driven Forms 
+    - need to import FormsModule in app module 
+ 
+ 7.2 Dynamic / Reactive Forms 
+    - need to import ReactiveFormsModule in app module 
+
+
+

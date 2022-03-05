@@ -1,0 +1,22 @@
+Ep #69 - Angular Forms - Reactive Forms - FormArray
+
+1. So far, we have learned and used FormControl, FormGroup and FomrBuilder 
+
+2. Helps in building basic form with form elements 
+
+3. One of the most important feature working in Reactive Forms
+
+4. For complex forms, we will need Form Arrays
+
+5. Almost all modern applications will need us to work with Form Arrays
+
+6. Dom interactions in Angular Reactive Forms are implemented using the Form Arrays 
+
+7. Adding and Removing elements is very easily handled using FormArrays
+
+8. Fo aggregates the value of the "child" FormControl into array 
+
+9. The status of the FormArray is calculated by reducing the statuses of it's children 
+
+10. If any one of the controls is invalid, the entire array becomes invalid 
+

@@ -1,0 +1,44 @@
+Episode #22 - ngStyle
+
+1. ngStyle is a built in directive used to set style/css properties
+
+2. [ngStyle]
+
+3. Any/All css properties using ngStyle
+
+4. More then 1 property on any Dom elements
+
+5. We can also pass dynamic values to ngStyle
+
+6. ngStyle - hands on example
+
+   6.1 Basic use case of ngStyle - setting value using ngStyle
+      
+      6.1.1 example: <div [ngStyle]="{'background-color':'green', 'color':'white'}">This is green </div>
+   
+   6.2 Dynamic value from component
+
+      6.2.1 example: <div [ngStyle]="{'background-color': styleProp}">This is green </div>
+
+      6.2.2 styleProp variable should be declare on .ts file by providing css value. 
+
+        - styleProp = "white"; //on .ts class
+
+   6.3 ngStyle with conditional operators
+
+      6.3.1 have to declare variable on .ts file
+
+        - textColor = "red"; //on .ts class
+
+      6.3.2 example: <div [ngStyle]="{'color': textColor==='red'? 'red' : 'green' }">This is conditional ngStyle </div>
+        
+        - if textColor equal to 'red'? , 'set it red' : 'else green'
+
+7. Common mistakes
+   - Not giving correct {} brackets
+   - Not putiing double/single qoutes where required
+   - Spelling mistakes in defining css properties
+   - Do not put qoutes for the variables - it will become strings
+
+
+ 

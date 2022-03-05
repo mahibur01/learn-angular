@@ -1,0 +1,27 @@
+<p>loan-types works!</p>
+
+<form [formGroup]="addLoanForm">
+    <div class="form-group">
+        <label>
+            Loan Name
+        </label>
+        <input type="text" formControlName="loanName">
+    </div>
+
+    <div class="form-group">
+        <label>
+            Loan Type
+        </label>
+        <input type="text" formControlName="loanType">
+    </div>
+
+    <div class="form-group">
+        <label>
+            Loan Description
+        </label>
+        <textarea formControlName="loanDescription"></textarea>
+    </div>
+    <button (click)="addLoanType()" [disabled]="!addLoanForm.valid">Add Loan Type</button>
+    <button (click)="resetForm()">Reset Form</button>
+
+</form>

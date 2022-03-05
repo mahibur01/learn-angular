@@ -1,0 +1,40 @@
+Episode #42 - Parametrized Routes - Dynamic Routes 
+
+1. We can send dynamic data or parameters 
+
+2. URLs will look something like this 
+
+    http://localhost.com/user/10 -> get the user with Id as 10 
+
+    http://localhost.com/search/ka/bangalore -> state and city 
+
+    http://localhost.com/user/10/photos/34 -> user id = 10 and photo id = 34 
+
+3. While writing dynamic URLs/Params - make sure you write :(colon) for dynamic data 
+
+4. Import the ActivatedRoute class at component.ts file   
+
+   E.g. import { ActivatedRoute } from '@angular/router'
+
+5. Create an object in constructor -> 
+
+   E.g. constructor(private activatedRoute: ActivatedRoute) {}
+
+6. We can create any number of dynamic params in our URLs 
+
+variable ->
+-------------
+
+  productId = 0;
+  photoId = 0;
+
+This inside contructor ->
+-----------------------------------------------------
+  this.activatedRoute.params.subscribe((params)=>
+    {
+      const interValue = params;
+      // console.log(params);
+      this.productId = interValue.productId;
+      this.photoId = interValue.photoId;
+    }
+    )
